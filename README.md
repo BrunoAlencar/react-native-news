@@ -13,6 +13,7 @@ or
 ```
 yarn 
 ```
+- You need to create a account on Firebase and get the info of FireExample.js and create your own Fire.js
 - Running project on browser
 ```
 npm run web
