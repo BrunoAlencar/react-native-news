@@ -14,6 +14,19 @@ or
 yarn 
 ```
 - You need to create a account on Firebase and get the info of FireExample.js and create your own Fire.js
+```
+var firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+};
+```
+
 - Running project on browser
 ```
 npm run web
