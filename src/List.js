@@ -9,7 +9,8 @@ export default function List({ navigation }) {
   const [listFire, setListFire] = useState([]);
   const [currentList, setCurrentList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const { news, setNews } = useContext(NewsContext)
+  const { setNews } = useContext(NewsContext)
+  const [timeOutRegister, setTimeOutRegister] = useState(null)
 
   
 
@@ -44,14 +45,15 @@ export default function List({ navigation }) {
     navigation.push("Detalhes")
   }
   const onChangeSearch = search => {
-    console.log(search)
     setSearchQuery(search)
-    setCurrentList(listFire.filter(
-      ({title, text, author}) =>  title.includes(search) || 
-                                  text.includes(search) || 
-                                  author.includes(search) 
-    ))
 
+    if (timeOutRegister) clearTimeout(timeOutRegister)
+    
+    setTimeOutRegister(setTimeout(()=> {
+      setCurrentList(listFire.filter(
+        ({title}) =>  title.toLowerCase().includes(search)
+      ))
+    }, 500))
   }
 
 
