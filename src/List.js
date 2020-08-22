@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, FlatList, StatusBar } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import firebase from '../Fire';
 
 import { NewsContext } from './contexts/NewsContext'
+import Logo from './components/Logo';
 
 export default function List({ navigation }) {
   const [listFire, setListFire] = useState([]);
@@ -11,7 +12,6 @@ export default function List({ navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
   const { setNews } = useContext(NewsContext)
   const [timeOutRegister, setTimeOutRegister] = useState(null)
-
   
 
   useEffect(() => {
@@ -60,6 +60,7 @@ export default function List({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Logo/>
       <Searchbar
         placeholder="Buscar notícia"
         onChangeText={onChangeSearch}
@@ -74,7 +75,7 @@ export default function List({ navigation }) {
                 style={styles.button}
                 onPress={() => handleSelect(item) }
               >
-                <Text>{item.title}</Text>
+                  <Text style={{fontSize: 16}}>{item.title}</Text>
               </TouchableOpacity>
           </View>
 
@@ -83,7 +84,7 @@ export default function List({ navigation }) {
       <TouchableOpacity style={styles.btnEnviar} onPress={() => navigation.push("Criar Notícia")}>
         <Text style={styles.text}>Criar nova notícia</Text>
       </TouchableOpacity>
-
+      <StatusBar backgroundColor="#151A4E" barStyle="dark-content" />
     </View>
   );
 }
@@ -91,12 +92,15 @@ export default function List({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111',
+    backgroundColor: '#151A4E',
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
     color: '#fff',
+    margin: 5,
+    textAlign: "center",
+    fontSize: 18,
   },
   textInput: {
     width: 300,
@@ -108,32 +112,41 @@ const styles = StyleSheet.create({
   },
   button: {
     alignItems: "center",
-    backgroundColor: "#DDDDDD",
-    padding: 10
+    backgroundColor: "#fff",
+    padding: 10,
+    width: 350,
   },
   btnEnviar: {
     margin: 10,
     borderWidth: 1,
-    borderColor: 'red',
     width: 250,
     height: 50,
     alignItems: 'center',
+    borderRadius: 30,
     justifyContent: 'center',
+    backgroundColor: '#7959eb',
   },
   
   iconFlat: {
     flexDirection: 'row',
-    width: 350,
     height: 50,
-    borderColor: '#fff',
-    borderWidth: 1,
-    borderRadius: 5,
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 5
+    marginTop:5,
+    marginBottom:0,
+    marginHorizontal: 5, 
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 0.37,
+    shadowRadius: 7.49,
+    
+    elevation: 12,
   },
   
   viewFlat: {
-    // maxHeight: 410,
+    maxHeight: 610,
   }
 });

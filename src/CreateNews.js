@@ -52,8 +52,8 @@ export default function Show({ navigation }) {
       />
 
       <TextInput style={styles.textInput}
-      multiline={true}
-      numberOfLines={4}
+        multiline={true}
+        numberOfLines={6}
         onChangeText={text => setText(text)} value={text}
         placeholder='Texto da notícia'
       />
@@ -64,7 +64,7 @@ export default function Show({ navigation }) {
       />
 
       <TouchableOpacity style={styles.btnEnviar} onPress={createFire}>
-        <Text style={styles.text}>Enviar</Text>
+        <Text style={styles.text}>Salvar</Text>
       </TouchableOpacity>
 
     </SafeAreaView>
@@ -73,30 +73,34 @@ export default function Show({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#000',
-        alignItems: 'center',
-        justifyContent: 'center',
+      flex: 1,
+      backgroundColor: '#151A4E',
+      alignItems: 'center',
     },
     text: {
-        color: '#fff',
+      color: '#fff',
+      margin: 5,
+      textAlign: "center",
+      fontSize: 18,
     },
     textInput: {
         width: 300,
         minHeight: 50,
         backgroundColor: '#fff',
-        borderRadius: 10,
+        borderRadius: 4,
         textAlign: 'center',
         padding: 5,
-        marginTop: 5
+        marginTop: 10,
+        fontSize: 16
     },
     btnEnviar: {
-        margin: 10,
-        borderWidth: 1,
-        borderColor: 'red',
-        width: 250,
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
+      margin: 10,
+      borderWidth: 1,
+      width: 250,
+      height: 50,
+      alignItems: 'center',
+      borderRadius: 30,
+      justifyContent: 'center',
+      backgroundColor: '#7959eb',
     },
 });

@@ -1,13 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { StyleSheet, Text, View, StatusBar, useIs  } from 'react-native';
 import { FAB } from 'react-native-paper';
-import firebase from '../Fire';
 import { NewsContext } from './contexts/NewsContext';
 
 export default function Details({ navigation }) {
   const {news} = useContext(NewsContext)
-
-  
 
   function editFire() {
     navigation.push("Code7 Editar");
@@ -15,7 +12,6 @@ export default function Details({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{news.title}</Text>
       <Text style={styles.text}>{news.text}</Text>
       <Text style={styles.text}>{news.author}</Text>
       <FAB
@@ -25,7 +21,7 @@ export default function Details({ navigation }) {
         onPress={() => editFire()}
       />
    
-      <StatusBar backgroundColor="blue" barStyle="dark-content" />
+      <StatusBar backgroundColor="#151A4E" barStyle="dark-content" />
     </View>
   );
 }
@@ -33,11 +29,14 @@ export default function Details({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: '#151A4E',
     alignItems: 'center',
   },
   text: {
     color: '#fff',
+    fontSize: 16,
+    margin: 12,
+    textAlign: "justify"
   },
   textInput: {
     width: 300,
