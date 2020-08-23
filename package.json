@@ -5,7 +5,11 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest",
+    "test:clearCache": "jest --clearCache",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watchAll"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.7",
@@ -34,7 +38,25 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
-    "babel-preset-expo": "~8.1.0"
+    "@testing-library/jest-native": "^3.3.0",
+    "@testing-library/react-native": "^7.0.2",
+    "babel-preset-expo": "~8.1.0",
+    "jest": "^26.4.2",
+    "react-test-renderer": "^16.13.1"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   },
   "private": true
 }

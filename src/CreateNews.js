@@ -25,7 +25,7 @@ export default function Show({ navigation }) {
 
     } catch (error) {
       Alert.alert(
-        "Sucesso!",
+        "Erro",
         "Ops, algo deu errado...Se o problema persistir por favor entra em contato com o suporte, isso pode nos ajudar!",
       );
     }

@@ -51,7 +51,7 @@ export default function List({ navigation }) {
     
     setTimeOutRegister(setTimeout(()=> {
       setCurrentList(listFire.filter(
-        ({title}) =>  title.toLowerCase().includes(search)
+        ({title}) =>  title.toLowerCase().includes(search.toLowerCase())
       ))
     }, 500))
   }
