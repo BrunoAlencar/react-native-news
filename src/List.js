@@ -65,6 +65,7 @@ export default function List({ navigation }) {
         placeholder="Buscar notícia"
         onChangeText={onChangeSearch}
         value={searchQuery}
+        style={styles.search}
       />
       <FlatList style={styles.viewFlat} data={currentList}
         keyExtractor={(item) => item.key}
@@ -95,6 +96,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#151A4E',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  search: {
+    marginTop: 10,
+    marginBottom: 15,
   },
   text: {
     color: '#fff',

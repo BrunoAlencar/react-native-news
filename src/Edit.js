@@ -75,7 +75,7 @@ export default function Update({ navigation }) {
           <TouchableOpacity style={styles.btnEnviar} onPress={() => { upDateFire() }}>
               <Text style={styles.text}>Atualizar</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btnEnviar} onPress={() => { delFire() }}>
+          <TouchableOpacity style={styles.btnDelete} onPress={() => { delFire() }}>
               <Text style={styles.text}>Excluir</Text>
           </TouchableOpacity>
 
@@ -87,33 +87,49 @@ export default function Update({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#000',
+        backgroundColor: '#151A4E',
         alignItems: 'center',
     },
     viewCenter: {
-        backgroundColor: '#000',
         alignItems: 'center',
         justifyContent: 'center',
     },
     text: {
-        color: '#fff',
+      color: '#fff',
+      margin: 5,
+      textAlign: "center",
+      fontSize: 18,
     },
     btnEnviar: {
-        borderWidth: 1,
-        borderColor: 'red',
-        width: 100,
-        height: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 20
+      margin: 10,
+      marginTop: 20,
+      borderWidth: 1,
+      width: 250,
+      height: 50,
+      alignItems: 'center',
+      borderRadius: 30,
+      justifyContent: 'center',
+      backgroundColor: '#7959eb',
+    },
+    btnDelete: {
+      backgroundColor: '#db2a2a',
+      margin: 10,
+      marginTop: 20,
+      borderWidth: 1,
+      width: 250,
+      height: 50,
+      alignItems: 'center',
+      borderRadius: 30,
+      justifyContent: 'center',
     },
     textInput: {
       width: 300,
       minHeight: 50,
       backgroundColor: '#fff',
-      borderRadius: 10,
+      borderRadius: 4,
       textAlign: 'center',
       padding: 5,
-      marginTop: 5
+      marginTop: 10,
+      fontSize: 16
   },
 });

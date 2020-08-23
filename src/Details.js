@@ -46,27 +46,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 5
   },
-  btnEnviar: {
-    margin: 10,
-    borderWidth: 1,
-    borderColor: 'red',
-    width: 250,
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  
-  iconFlat: {
-    flexDirection: 'row',
-    width: 350,
-    height: 50,
-    borderColor: '#fff',
-    borderWidth: 1,
-    borderRadius: 5,
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 5
-  },
   
   viewFlat: {
     maxHeight: 410,
@@ -76,5 +55,6 @@ const styles = StyleSheet.create({
     margin: 16,
     right: 0,
     bottom: 0,
+    backgroundColor: '#7959eb'
   },
 });

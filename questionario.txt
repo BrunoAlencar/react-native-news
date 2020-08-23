@@ -1,0 +1,45 @@
+1 - C
+2 - E
+3 - D
+4 - 54.326
+5 - D
+6 - B
+7 - E
+8 - A e D
+9 - B
+10 - E Não tenho conhecimento sobre essa API de gerência ( se ela existir )
+11 - A
+12 - B
+13 - E
+14 -
+ALGORITMO "OrdenaValoresInteirosCrescente" 
+VAR
+    array: vetor [1..7] de inteiro
+    aux, indice, i, tamanhoVetor: Inteiro
+    array := {5,3,2,4,7,1,0,6}
+INICIO
+    PARA indice de 0 ATÉ 6 FAÇA
+        PARA i de indice + 1 ATÉ 7 FAÇA
+            SE array[indice] > array[i] ENTÃO
+                aux := array[indice]
+                array[indice] := array[i]
+                array[i] := aux
+            FIMSE
+        FIMPARA
+    FIMPARA
+FIMALGORITMO
+
+Tomei liberdade de deixar o código que fiz inicialmente em JavaScript.
+let array = [5,3,2,4,7,1,0,6]
+
+let aux;
+for (let index = 0; index < (array.length-1); index++) {
+    for (let i= index + 1; i < array.length; i++) {
+         if(array[index] > array[i]){
+            aux = array[index]
+            array[index] = array[i]
+            array[i] = aux
+         }
+    }
+}
+
